@@ -1,0 +1,267 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'WarhavenB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/WarhavenB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.registration-form label, .registration-form input, .registered-cows th, .registered-cows td {
+    color: var(--text-primary);
+    font-family: 'WarhavenB', sans-serif;
+}
+
+.layout, .content-container, .registration-form, .image-preview, .table-container, .filter-section, .pagination {
+    background-color: var(--background-primary);
+    font-family: 'WarhavenB', sans-serif;
+}
+
+/* 레이아웃 */
+.layout {
+    min-width: 1000px; /* 페이지가 좁을 경우 가로 스크롤 발생 */
+    min-height: 100vh; /* 페이지 전체 높이 */
+    overflow: visible; /* 스크롤 필요 시 auto로 변경 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 콘텐츠 컨테이너 */
+.content-container {
+    margin-top: 70px; /* 헤더 높이만큼 여백 */
+    margin-left: 250px; /* 사이드바 너비만큼 여백 */
+    width: calc(100% - 250px); /* 사이드바를 제외한 너비 */
+    min-height: calc(100vh - 70px); /* 화면 높이에서 헤더 제외 */
+    overflow: visible; /* 스크롤 필요 시 auto로 변경 */
+}
+
+/* 메인 콘텐츠 */
+.content-main {
+    flex: 1;
+    padding: 20px;
+    display: flex; /* 가로 정렬을 위한 설정 */
+    align-items: flex-start; /* 시작 지점에 맞추기 */
+    gap: 20px; /* 폼과 테이블 사이 간격 */
+}
+
+/* 등록 폼 스타일 */
+.registration-form {
+    width: 500px;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.registration-form input,
+.registration-form select,
+.registration-form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: black;
+    background-color: #eaf0fe;
+    font-family: 'WarhavenB', sans-serif;
+}
+
+.registration-form input[type="file"] {
+    padding: 5px;
+}
+
+/* 이미지 미리보기 스타일 */
+.image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.image-container {
+    position: relative;
+    margin: 5px;
+}
+
+.image-container img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #555;
+}
+
+.image-container .remove-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 2px solid red;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.image-container .remove-button:hover {
+    background-color: red;
+}
+
+.image-container .remove-button::before {
+    content: '×';
+    font-size: 18px;
+    color: red;
+    line-height: 1;
+}
+
+/* 테이블 컨테이너 */
+.table-container {
+    width: 100%; 
+    overflow-x: auto;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+/* 등록된 소 테이블 스타일 */
+.registered-cows {
+    width: 100%; 
+    min-width: 800px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.registered-cows th,
+.registered-cows td {
+    border: 1px solid #555;
+    padding: 20px 10px;
+    text-align: center;
+    vertical-align: middle;
+    word-wrap: break-word;
+    height: 60px;
+}
+
+.registered-cows th {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* 작은 화면 대응 */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    .content-container {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+}
+
+/* 등록 버튼 스타일 */
+.registration-form .submit-button {
+    width: 50%;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: 'WarhavenB', sans-serif;
+}
+
+.registration-form .submit-button:hover {
+    background-color: #63b3ff;
+    transform: scale(1.05);
+}
+
+.registration-form .submit-button:active {
+    background-color: #1e70d1;
+    transform: scale(0.95);
+}
+
+/* 필터 섹션 스타일 */
+.filter-section {
+    margin: 10px 0;
+    display: flex;
+    gap: 10px;
+    width: 40%;
+}
+
+.filter-section input {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-family: 'WarhavenB', sans-serif;
+}
+
+.filter-section select {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-family: 'WarhavenB', sans-serif;
+}
+
+/* 삭제 버튼 스타일 */
+.delete-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'WarhavenB', sans-serif;
+}
+
+.delete-button:hover {
+    background-color: #ff1a1a;
+}
+
+/* 페이지네이션 */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.page-button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #1a1a1a;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.page-button:hover {
+    background-color: #333;
+}
+
+.page-button.active {
+    background-color: #1e90ff;
+    font-weight: bold;
+}

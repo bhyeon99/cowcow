@@ -1,0 +1,187 @@
+@font-face {
+    font-family: 'WarhavenB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/WarhavenB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* SignUp.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--background-primary); /* 전역 변수 사용 */
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-primary); /* 모드에 따라 자동 변경 */
+    font-family: 'WarhavenB', sans-serif;
+}
+
+/* .signup-box 설정 */
+.signup-box {
+    width: 400px;
+    padding: 40px;
+    background-color: var(--background-secondary); /* 다크/라이트 모드 배경색 */
+    box-shadow: none;
+    border-radius: 8px;
+}
+
+/* 다크 모드에서 placeholder 텍스트 색상을 반투명 흰색으로 */
+[data-theme="dark"] .input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* 반투명 흰색 */
+}
+
+[data-theme="light"] .signup-box {
+    background-color: #ffffff; /* 라이트 모드에서 흰색 고정 */
+}
+
+.signup-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #f0f0f0;
+    font-weight: bold;
+}
+
+/* 입력창 스타일 */
+.input-group input {
+    width: calc(100% - 3px);
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
+    box-sizing: border-box;
+    background-color: #0d1117;
+}
+
+[data-theme="light"] .input-group input {
+    background-color: #eaf0fe; /* 라이트 모드에서 입력창 배경 */
+    color: #000000; /* 라이트 모드에서 텍스트 색상 검은색 */
+}
+
+.input-group input::placeholder {
+    color: #888;
+}
+
+[data-theme="light"] .input-group input::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* 반투명 검은색 */
+}
+
+/* 이메일 입력과 인증 버튼을 같은 줄에 배치 */
+.email-group {
+    display: flex;
+    align-items: center;
+}
+
+.email-group input {
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* 버튼 스타일 */
+.signup-button, .verify-button, .go-login-button {
+    background-color: #63b3ff;
+    color: white;
+    transition: background-color 0.3s;
+    font-family: 'WarhavenB', sans-serif;
+}
+
+.verify-button {
+    height: 42px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* 인증 결과 문구 스타일 */
+.verification-message {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.verification-message.success {
+    color: #4caf50;
+}
+
+.verification-message.failure {
+    color: #f44336;
+}
+
+.phone-input input {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #0d1117;
+    color: #f0f0f0;
+    box-sizing: border-box;
+}
+
+.signup-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* 회원가입 성공 메시지 */
+.success-message {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.go-login-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.signup-button:hover, .verify-button:hover, .go-login-button:hover {
+    background-color: #4a90e2;
+}
+
+/* 링크 스타일 */
+.login-link-text {
+    color: var(--accent-color);
+}
+
+.login-link-text:hover {
+    text-decoration: underline;
+}

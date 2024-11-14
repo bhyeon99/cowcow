@@ -1,0 +1,10 @@
+# Node 모듈 및 로그 파일 제외
+node_modules/
+npm-debug.log
+frontend/node_modules
+backend/node_modules
+
+# Docker 관련 임시 파일 제외
+*.log
+*.tmp
+db_data/

@@ -1,0 +1,63 @@
+/* WarhavenB 폰트 정의 */
+@font-face {
+    font-family: 'WarhavenB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/WarhavenB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+
+/* Sidebar 기본 스타일 */
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    font-family: 'WarhavenB', sans-serif;
+}
+
+.sidebar ul li a {
+    color: var(--text-secondary);
+}
+
+.sidebar ul li a.active, .sidebar ul li a:hover {
+    color: var(--text-primary);
+}
+
+.sidebar {
+    background-color: var(--background-secondary);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    color: #333;
+}
+
+/* 활성화된 링크의 스타일 */
+.sidebar ul li a.active {
+    background-color: #1e90ff;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* 호버 상태 스타일 */
+.sidebar ul li a:hover {
+    color: #1e90ff;
+}

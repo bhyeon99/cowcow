@@ -1,0 +1,97 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'WarhavenB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/WarhavenB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+/* 레이아웃 스타일 */
+.transaction-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 콘텐츠 컨테이너 */
+.content-container {
+    display: flex;
+    flex: 1;
+}
+
+/* 메인 콘텐츠 스타일 */
+.transaction-content {
+    flex: 1;
+    padding: 40px;
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+.transaction-content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* 드롭다운 스타일 */
+.filter-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.filter-dropdown {
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #eaf0fe; /* 배경색 고정 */
+    color: #000000 !important; /* 글씨 색상 검정으로 강하게 고정 */
+    border: none;
+    cursor: pointer;
+}
+
+/* 테이블 스타일 */
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.transaction-table th, .transaction-table td {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+    text-align: center;
+}
+
+.transaction-table tr:hover {
+    background-color: #444;
+}
+
+.nav-links a, .transaction-content h1, .transaction-table th, .transaction-table td, .filter-dropdown {
+    color: var(--text-primary);
+    font-family: 'WarhavenB', sans-serif;
+}
+
+.transaction-layout, .content-container, .transaction-content, .filter-container, .transaction-table {
+    background-color: var(--background-primary);
+}

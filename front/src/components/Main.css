@@ -1,0 +1,181 @@
+a {
+    text-decoration: none !important;
+}
+
+/* 전체 레이아웃 스타일 */
+html, body {
+    /* height: 100%; /* 화면 전체 높이를 채우도록 설정 */ 
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+    /* transition: background-color 0.3s, color 0.3s; */
+    background-color: var(--background-primary); /* 배경색 설정 */
+}
+
+.nav-links a, .greeting, .auction-info, .auction-card, .viewer-count, .live-badge, .top-button {
+    color: var(--text-primary);
+    font-family: 'WarhavenB', sans-serif;
+}
+
+.main-container, .search-bar input, .live-auctions, .auction-list, .auction-card, .thumbnail-container, .top-button {
+    background-color: var(--background-primary);
+    font-family: 'WarhavenB', sans-serif;
+}
+
+
+/* 창 너비가 768px 이하일 때 검색바 숨기기 */
+@media (max-width: 815px) {
+    .search-bar {
+      display: none;
+    }
+  }
+
+/* 검색창 스타일 */
+.search-bar input {
+    display: block; /* 기본적으로 검색바를 표시 */
+    height : 32.5px;
+    padding: 10px;
+    border-radius: 8px;
+    width: 20%;
+    border: 1px solid #444;
+    outline: none;
+    transition: border-color 0.3s;
+    left: 35%;
+    font-family: 'WarhavenB', sans-serif;
+    position: fixed;
+    z-index: 100;
+  }
+  
+
+/* 헤더 텍스트와 네비게이션 링크 스타일 */
+.nav-links {
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* 넘치는 텍스트 숨기기 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+.nav-links a {
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    overflow: hidden; /* 넘치는 텍스트 숨기기 */
+}
+
+/* 인사말 텍스트 스타일 */
+.greeting {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+    max-width: 200px;
+}
+
+
+
+/* 경매 목록 섹션 */
+.live-auctions {
+    flex-grow: 1; /* 남은 공간을 채우도록 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 상단 정렬 */
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: var(--background-primary); /* 배경색 설정 */
+}
+
+.live-auctions h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #63b3ff;
+}
+
+/* 경매 카드 그리드 */
+.auction-list {
+    display: grid;
+    gap: 20px;
+    padding:  40px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* 경매 카드 스타일 */
+.auction-card {
+    margin: 0 auto;
+    max-width: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 썸네일 컨테이너 */
+.thumbnail-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.thumbnail-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* LIVE 배지 */
+.live-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* 시청자 수 */
+.viewer-count {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* 경매 정보 */
+.auction-info {
+    padding: 5px;
+    text-align: left;
+    color: var(--text-primary);
+}
+
+
+/* 애니메이션 효과 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 5열로 제한 */
+@media (min-width: 1200px) {
+    .auction-list {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+

@@ -1,0 +1,96 @@
+/* 전역 CSS 변수 정의 */
+:root {
+  --background-primary: #ffffff;
+  --background-secondary: #f0f0f0;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --accent-color: #0056b3;
+  --hover-color: #007acc;
+}
+
+/* 다크모드 CSS 변수 */
+[data-theme="dark"] {
+  --background-primary: #1a1a1a;
+  --background-secondary: #333333;
+  --text-primary: #f0f0f0;
+  --text-secondary: #bbbbbb;
+  --accent-color: #1e90ff;
+  --hover-color: #63b3ff;
+}
+
+/* 기본 스타일 */
+body {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* 메인 헤더 */
+.main-header {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a {
+  color: var(--text-primary);
+}
+
+.nav-links a:hover {
+  color: var(--hover-color);
+}
+
+/* 사이드바 */
+.sidebar {
+  background-color: var(--background-secondary);
+  transition: background-color 0.3s;
+}
+
+.sidebar ul li a {
+  color: var(--text-secondary);
+}
+
+.sidebar ul li a:hover {
+  background-color: var(--background-secondary);
+  color: var(--hover-color);
+}
+
+.sidebar ul li a.active {
+  background-color: var(--accent-color);
+  color: #ffffff;
+}
+
+
+/* 테마 토글 버튼 */
+.theme-toggle-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 100;
+}
+
+/* 테마 토글 버튼 */
+.theme-toggle-button-video {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 100;
+}

@@ -1,0 +1,93 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'WarhavenB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/WarhavenB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a, .warning h2, .warning p, .delete-btn {
+    color: var(--text-primary);
+    font-family: 'WarhavenB', sans-serif;
+}
+
+.delete-account-layout, .content-container, .content-center, .warning {
+    background-color: var(--background-primary);
+    font-family: 'WarhavenB', sans-serif;
+}
+
+/* 레이아웃 스타일 */
+.delete-account-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 콘텐츠 컨테이너 */
+.content-container {
+    display: flex;
+    flex: 1;
+}
+
+/* 중앙 정렬 */
+.content-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 유의사항 스타일 */
+.warning {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    width: 80%;
+    max-width: 600px;
+}
+
+.warning h2 {
+    margin-bottom: 10px;
+}
+
+.warning p {
+    margin: 5px 0;
+}
+
+/* 회원탈퇴 버튼 스타일 */
+.delete-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: red;
+}
+
+.delete-btn:hover {
+    background-color: #aa2525;
+}
